@@ -1,4 +1,17 @@
 /* ============================================================
+   0. FONTE GERAL
+   ============================================================ */
+.rt-container,
+.rt-container *,
+.rt-table,
+.rt-table *,
+table,
+th,
+td {
+    font-family: Tahoma, sans-serif !important;
+}
+
+/* ============================================================
    1. REMOVER CABEÇALHO SUPERIOR (RESUMOS E FILTROS DINÂMICOS)
    ============================================================ */
 .rt-header-container,
@@ -41,9 +54,17 @@ td, .rt-table td {
 /* ============================================================
    3. OCULTAR COLUNAS ESPECÍFICAS (7, 11 e 12)
    ============================================================ */
-th:nth-child(7), td:nth-child(7) { display: none !important; }
-th:nth-child(11), td:nth-child(11) { display: none !important; }
-th:nth-child(12), td:nth-child(12) { display: none !important; }
+th:nth-child(7), td:nth-child(7) {
+    display: none !important;
+}
+
+th:nth-child(11), td:nth-child(11) {
+    display: none !important;
+}
+
+th:nth-child(12), td:nth-child(12) {
+    display: none !important;
+}
 
 /* Ocultar a célula excedente da extremidade direita nas linhas de subtotal */
 tbody tr:has(td:nth-child(2):empty) td:last-child {
@@ -53,8 +74,12 @@ tbody tr:has(td:nth-child(2):empty) td:last-child {
 /* ============================================================
    4. RENOMEAR CABEÇALHOS DAS COLUNAS (5, 8 e 10)
    ============================================================ */
+
 /* Coluna 5: Atingimento */
-th:nth-child(5) { font-size: 0 !important; }
+th:nth-child(5) {
+    font-size: 0 !important;
+}
+
 th:nth-child(5)::after {
     content: "Atingimento" !important;
     font-size: 12px !important;
@@ -62,7 +87,10 @@ th:nth-child(5)::after {
 }
 
 /* Coluna 8: YOY Produção */
-th:nth-child(8) { font-size: 0 !important; }
+th:nth-child(8) {
+    font-size: 0 !important;
+}
+
 th:nth-child(8)::after {
     content: "YOY Produção" !important;
     font-size: 12px !important;
@@ -70,7 +98,10 @@ th:nth-child(8)::after {
 }
 
 /* Coluna 10: QTD YOY */
-th:nth-child(10) { font-size: 0 !important; }
+th:nth-child(10) {
+    font-size: 0 !important;
+}
+
 th:nth-child(10)::after {
     content: "QTD YOY" !important;
     font-size: 12px !important;
@@ -89,11 +120,11 @@ tbody tr td {
     font-style: normal !important;
 }
 
-/* Linhas Nível Macro (Subtotais de Área de Negócio): Fundo Cinzento Escuro e Negrito */
+/* Linhas Nível Macro (Subtotais de Área de Negócio) */
 tbody tr:has(td:nth-child(2):empty) td,
 tbody tr[class*="subtotal"] td,
 tbody tr.rt-subtotal-row td {
-    background-color: #cbd5e1 !important; /* Cinzento destacado */
+    background-color: #cbd5e1 !important;
     color: #000000 !important;
     font-weight: bold !important;
     font-style: italic !important;
@@ -101,7 +132,9 @@ tbody tr.rt-subtotal-row td {
     border-bottom: 2px solid #64748b !important;
 }
 
-/* Linha de Total Geral */
+/* ============================================================
+   6. LINHA DE TOTAL GERAL
+   ============================================================ */
 tbody tr:last-child td,
 tr[class*="total"] td {
     background-color: #94a3b8 !important;
