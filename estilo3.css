@@ -31,7 +31,7 @@ table.rt-table, .rt-table {
     border: 1px solid #d1d5db !important;
     box-shadow: none !important;
     text-align: center !important;
-    vertical-align: middle !important;
+    vertical-align: middle !important; 
 }
 
 /* Células de dados */
