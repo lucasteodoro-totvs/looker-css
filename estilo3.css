@@ -93,8 +93,14 @@ td:nth-child(12) {
    6. OCULTAR A ÚLTIMA COLUNA EXTRA / SEM CABEÇALHO
    ============================================================ */
 
-.rt-table thead th:last-child,
-.rt-table tbody td:last-child {
+/* Último elemento de cada linha da tabela */
+.rt-table tr > *:last-child {
+    display: none !important;
+}
+
+/* Caso a Virtual Table utilize ARIA roles */
+.rt-table [role="row"] > [role="cell"]:last-child,
+.rt-table [role="row"] > [role="columnheader"]:last-child {
     display: none !important;
 }
 
