@@ -1,5 +1,5 @@
 /* ============================================================
-   1. REMOVER CABEÇALHO SUPERIOR (RESUMOS E FILTROS DINÂMICOS)
+   1. REMOVER CABEÇALHO SUPERIOR
    ============================================================ */
 
 .rt-header-container,
@@ -16,7 +16,7 @@ div[class*="header"],
 
 
 /* ============================================================
-   2. ESTRUTURA GERAL DA TABELA E CABEÇALHOS
+   2. ESTRUTURA GERAL DA TABELA
    ============================================================ */
 
 table.rt-table,
@@ -27,19 +27,19 @@ table.rt-table,
 
 
 /* ============================================================
-   CABEÇALHOS DAS COLUNAS
+   3. CABEÇALHOS DAS COLUNAS
    ============================================================ */
 
 .rt-table thead th,
 .rt-table thead tr th,
 th {
     background-color: #5B2C83 !important;
-    color: #000000 !important;
+    color: #ffffff !important;
     font-family: Tahoma, sans-serif !important;
     font-weight: bold !important;
     padding: 5px 4px !important;
 
-    /* Remove todas as bordas do cabeçalho */
+    /* Sem bordas no cabeçalho */
     border: none !important;
     box-shadow: none !important;
 
@@ -49,7 +49,7 @@ th {
 
 
 /* ============================================================
-   CÉLULAS DE DADOS
+   4. CÉLULAS DE DADOS
    ============================================================ */
 
 td,
@@ -60,46 +60,51 @@ td,
     border-left: none !important;
     border-right: none !important;
 
-    /* Linha horizontal discreta */
+    /* Separação horizontal discreta */
     border-top: none !important;
     border-bottom: 1px solid #e2e8f0 !important;
 }
 
 
 /* ============================================================
-   3. OCULTAR COLUNAS ESPECÍFICAS (7, 11 E 12)
+   5. OCULTAR COLUNAS ESPECÍFICAS
    ============================================================ */
 
+/* Coluna 7 */
 th:nth-child(7),
 td:nth-child(7) {
     display: none !important;
 }
 
+/* Coluna 11 */
 th:nth-child(11),
 td:nth-child(11) {
     display: none !important;
 }
 
+/* Coluna 12 */
 th:nth-child(12),
 td:nth-child(12) {
     display: none !important;
 }
 
 
-/* Ocultar a célula excedente da extremidade direita
-   nas linhas de subtotal */
+/* ============================================================
+   6. OCULTAR A ÚLTIMA COLUNA EXTRA / SEM CABEÇALHO
+   ============================================================ */
 
-tbody tr:has(td:nth-child(2):empty) td:last-child {
+.rt-table thead th:last-child,
+.rt-table tbody td:last-child {
     display: none !important;
 }
 
 
 /* ============================================================
-   4. RENOMEAR CABEÇALHOS DAS COLUNAS (5, 8 E 10)
+   7. RENOMEAR CABEÇALHOS
    ============================================================ */
 
 
-/* Coluna 5: Atingimento */
+/* Coluna 5 — Atingimento */
 
 th:nth-child(5) {
     font-size: 0 !important;
@@ -112,7 +117,7 @@ th:nth-child(5)::after {
 }
 
 
-/* Coluna 8: YOY Produção */
+/* Coluna 8 — YOY Produção */
 
 th:nth-child(8) {
     font-size: 0 !important;
@@ -125,7 +130,7 @@ th:nth-child(8)::after {
 }
 
 
-/* Coluna 10: QTD YOY */
+/* Coluna 10 — QTD YOY */
 
 th:nth-child(10) {
     font-size: 0 !important;
@@ -139,14 +144,8 @@ th:nth-child(10)::after {
 
 
 /* ============================================================
-   5. ESTILIZAÇÃO DAS LINHAS
+   8. LINHAS DE DETALHE — SEGMENTOS
    ============================================================ */
-
-
-/* ------------------------------------------------------------
-   LINHAS NÍVEL MICRO — SEGMENTOS
-   Fundo branco / texto normal
-   ------------------------------------------------------------ */
 
 tbody tr td {
     background-color: #ffffff !important;
@@ -156,15 +155,16 @@ tbody tr td {
 }
 
 
-/* ------------------------------------------------------------
-   LINHAS NÍVEL MACRO — TOTALIZADOR DA ÁREA DE NEGÓCIO
-   ------------------------------------------------------------ */
+/* ============================================================
+   9. TOTALIZADOR DA ÁREA DE NEGÓCIO
+   ============================================================ */
 
 tbody tr:has(td:nth-child(2):empty) td,
 tbody tr[class*="subtotal"] td,
 tbody tr.rt-subtotal-row td {
     background-color: #cbd5e1 !important;
     color: #000000 !important;
+
     font-weight: bold !important;
     font-style: normal !important;
 
@@ -172,23 +172,25 @@ tbody tr.rt-subtotal-row td {
     border-left: none !important;
     border-right: none !important;
 
-    /* Destaque somente na separação do total */
+    /* Destaque horizontal */
     border-top: 2px solid #94a3b8 !important;
     border-bottom: 2px solid #94a3b8 !important;
 }
 
 
 /* ============================================================
-   6. TOTAL GERAL
+   10. TOTAL GERAL
    ============================================================ */
 
 tbody tr:last-child td,
 tr[class*="total"] td {
     background-color: #94a3b8 !important;
     color: #000000 !important;
+
     font-weight: bold !important;
     font-style: normal !important;
 
+    /* Sem bordas verticais */
     border-left: none !important;
     border-right: none !important;
 
