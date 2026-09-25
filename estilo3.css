@@ -1,110 +1,32 @@
 /* ============================================================
-   1. REMOVER CABEÇALHO SUPERIOR (RESUMOS E FILTROS DINÂMICOS)
+   CABEÇALHO
    ============================================================ */
-.rt-header-container,
-.rt-summary-container,
-.rt-top-section,
-.rt-pivot-header,
-.rt-header-table,
-div[class*="summary"],
-div[class*="top-header"],
-div[class*="header"],
-.rt-container > table:first-child:not(:only-child) {
-    display: none !important;
-}
-
-/* ============================================================
-   2. ESTRUTURA GERAL DA TABELA E CABEÇALHOS
-   ============================================================ */
-table.rt-table, .rt-table {
-    border-collapse: collapse !important;
-    width: 100% !important;
-}
-
-/* Cabeçalhos das Colunas */
-.rt-table thead th, th {
+.rt-table thead th,
+th {
     background-color: #ffffff !important;
     color: #000000 !important;
-    font-weight: bold !important;
-    padding: 8px 10px !important;
+    font-family: Tahoma, sans-serif !important;
+    font-weight: 700 !important;
+    padding: 5px 4px !important;
     border: 1px solid #d1d5db !important;
     text-align: center !important;
     vertical-align: middle !important;
+    white-space: nowrap !important;
 }
 
-/* Células de dados */
-td, .rt-table td {
-    padding: 6px 10px !important;
+/* ============================================================
+   CÉLULAS — REDUZIR ESPAÇAMENTO ENTRE COLUNAS
+   ============================================================ */
+.rt-table td,
+td {
+    padding: 4px 4px !important;
     border: 1px solid #d1d5db !important;
 }
 
-/* ============================================================
-   3. OCULTAR COLUNAS ESPECÍFICAS (7, 11 e 12)
-   ============================================================ */
-th:nth-child(7), td:nth-child(7) { display: none !important; }
-th:nth-child(11), td:nth-child(11) { display: none !important; }
-th:nth-child(12), td:nth-child(12) { display: none !important; }
-
-/* Ocultar a célula excedente da extremidade direita nas linhas de subtotal */
-tbody tr:has(td:nth-child(2):empty) td:last-child {
-    display: none !important;
-}
-
-/* ============================================================
-   4. RENOMEAR CABEÇALHOS DAS COLUNAS (5, 8 e 10)
-   ============================================================ */
-/* Coluna 5: Atingimento */
-th:nth-child(5) { font-size: 0 !important; }
-th:nth-child(5)::after {
-    content: "Atingimento" !important;
-    font-size: 12px !important;
-    display: inline-block !important;
-}
-
-/* Coluna 8: YOY Produção */
-th:nth-child(8) { font-size: 0 !important; }
-th:nth-child(8)::after {
-    content: "YOY Produção" !important;
-    font-size: 12px !important;
-    display: inline-block !important;
-}
-
-/* Coluna 10: QTD YOY */
-th:nth-child(10) { font-size: 0 !important; }
-th:nth-child(10)::after {
-    content: "QTD YOY" !important;
-    font-size: 12px !important;
-    display: inline-block !important;
-}
-
-/* ============================================================
-   5. ESTILIZAÇÃO DE LINHAS (SEGMENTO VS ÁREA DE NEGÓCIO)
-   ============================================================ */
-
-/* Linhas Nível Micro (Segmentos): Fundo Branco / Transparente */
-tbody tr td {
-    background-color: #ffffff !important;
-    color: #1a202c !important;
-    font-weight: normal !important;
-    font-style: normal !important;
-}
-
-/* Linhas Nível Macro (Subtotais de Área de Negócio): Fundo Cinzento Escuro e Negrito */
-tbody tr:has(td:nth-child(2):empty) td,
-tbody tr[class*="subtotal"] td,
-tbody tr.rt-subtotal-row td {
-    background-color: #cbd5e1 !important; /* Cinzento destacado */
-    color: #000000 !important;
-    font-weight: bold !important;
-    font-style: italic !important;
-    border-top: 1px solid #94a3b8 !important;
-    border-bottom: 2px solid #64748b !important;
-}
-
-/* Linha de Total Geral */
-tbody tr:last-child td,
-tr[class*="total"] td {
-    background-color: #94a3b8 !important;
-    color: #000000 !important;
-    font-weight: bold !important;
+/* Tabela ocupando toda a largura sem espaçamento */
+table.rt-table,
+.rt-table {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
 }
